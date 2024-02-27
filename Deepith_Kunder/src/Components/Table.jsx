@@ -21,13 +21,15 @@ export const Table = () => {
   const [users, setUsers] = useState([]); ///setting the data into a state variable
   useEffect(() => {
     ///to fetch the data from the api
-    return async function as() {
+     async function as() {
       const response = await fetch(
         "https://gist.githubusercontent.com/telematum/7751eec667033ac8acd244542e464e18/raw/d4710c6fb54224a0bd316ecdc5246633aceefce5/todays.json"
       );
       const data = await response.json();
       setUsers(data.appointments);
     };
+
+    as();
   }, []);
 
   function formatDate(dateString) {
